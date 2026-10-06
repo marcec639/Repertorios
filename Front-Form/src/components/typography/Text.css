@@ -1,0 +1,12 @@
+.ui-text {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.ui-text--default {
+  color: var(--color-text-primary);
+}
+
+.ui-text--muted {
+  color: var(--color-text-secondary);
+}

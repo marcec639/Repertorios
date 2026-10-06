@@ -1,0 +1,65 @@
+.ui-topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.ui-topbar__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.ui-topbar__intro h1 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+}
+
+.ui-topbar__intro p {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.ui-topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.ui-topbar__search {
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.ui-topbar__search:focus {
+  border-color: var(--color-accent);
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ui-topbar {
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-left: 52px; /* leave room for hamburger btn */
+  }
+
+  .ui-topbar__actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .ui-topbar__search {
+    flex: 1;
+    min-width: 0;
+  }
+}

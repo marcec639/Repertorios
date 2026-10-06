@@ -1,0 +1,23 @@
+.ui-navbar {
+  display: flex;
+  gap: var(--space-2xs);
+}
+
+.ui-navbar__item {
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.ui-navbar__item:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.ui-navbar__item.is-active {
+  background: var(--color-bg-active);
+  color: var(--color-text-primary);
+}

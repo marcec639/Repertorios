@@ -1,0 +1,27 @@
+.list-panel-demo {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+  min-height: 520px;
+}
+
+.list-panel-demo > .ui-list-panel {
+  position: sticky;
+  top: var(--space-md);
+  max-height: calc(100vh - var(--space-2xl));
+}
+
+.list-panel-demo__detail {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .list-panel-demo {
+    grid-template-columns: 1fr;
+  }
+  .list-panel-demo > .ui-list-panel {
+    position: static;
+    max-height: none;
+  }
+}

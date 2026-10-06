@@ -1,0 +1,12 @@
+.ui-heading {
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-bold);
+}
+
+.ui-heading--h1 { font-size: var(--text-3xl); }
+.ui-heading--h2 { font-size: var(--text-2xl); }
+.ui-heading--h3 { font-size: var(--text-xl); }
+.ui-heading--h4 { font-size: var(--text-lg); }
+.ui-heading--h5 { font-size: var(--text-base); }
+.ui-heading--h6 { font-size: var(--text-sm); }

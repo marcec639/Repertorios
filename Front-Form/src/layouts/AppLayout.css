@@ -1,0 +1,175 @@
+.ui-app {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-bg-surface);
+}
+
+/* ── Sidebar ─────────────────────────────────────────── */
+.ui-app__sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  background: var(--color-bg-surface);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width var(--transition-slow), min-width var(--transition-slow), transform var(--transition-slow);
+  z-index: 10;
+}
+
+/* ── Content ─────────────────────────────────────────── */
+.ui-app__main {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-xl) var(--space-2xl);
+  overflow-y: auto;
+  background: var(--color-bg-page);
+  border-radius: var(--radius-xl) 0 0 0;
+  margin-top: 6px;
+  position: relative;
+  box-shadow: inset 1px 1px 0 var(--color-border-light);
+}
+
+/* ── Collapse button ─────────────────────────────────── */
+.ui-app__collapse-btn {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 44px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  z-index: 20;
+  transition: background var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.ui-app__collapse-btn:hover {
+  background: var(--color-bg-active);
+  box-shadow: var(--shadow-md);
+}
+
+.ui-app__collapse-icon {
+  width: 22px;
+  height: 16px;
+  border: 2px solid var(--color-text-secondary);
+  border-radius: 3px;
+  position: relative;
+}
+
+.ui-app__collapse-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 100%;
+  background: var(--color-text-secondary);
+  border-radius: 1px;
+}
+
+/* ── Collapsed state (desktop) ───────────────────────── */
+.ui-app--collapsed .ui-app__sidebar {
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.ui-app--collapsed .ui-app__main {
+  border-radius: 0;
+  margin-top: 0;
+}
+
+/* ── Mobile overlay backdrop ─────────────────────────── */
+.ui-app__backdrop {
+  display: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Responsive — Mobile (≤ 768px)
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .ui-app {
+    flex-direction: column;
+  }
+
+  /* Sidebar becomes fixed overlay */
+  .ui-app__sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 100;
+    box-shadow: var(--shadow-xl);
+    transform: translateX(0);
+  }
+
+  .ui-app--collapsed .ui-app__sidebar,
+  .ui-app--sidebar-hidden {
+    transform: translateX(-100%);
+    box-shadow: none;
+  }
+
+  .ui-app--collapsed .ui-app__sidebar {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    overflow-y: auto;
+  }
+
+  /* Backdrop */
+  .ui-app__backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    animation: ui-backdrop-in 200ms ease;
+  }
+
+  @keyframes ui-backdrop-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* Main content full width */
+  .ui-app__main {
+    border-radius: 0;
+    margin-top: 0;
+    padding: var(--space-lg) var(--space-md);
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  /* Collapse button becomes hamburger in top-left */
+  .ui-app__collapse-btn {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    right: auto;
+    z-index: 50;
+  }
+
+  .ui-app:not(.ui-app--collapsed) .ui-app__collapse-btn {
+    display: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Responsive — Tablet (≤ 1024px)
+   ═══════════════════════════════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ui-app__main {
+    padding: var(--space-lg) var(--space-xl);
+  }
+}

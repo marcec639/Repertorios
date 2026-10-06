@@ -1,0 +1,181 @@
+/* ═══════════════════════════════════════════════════════════
+   Skeleton – Adaptive content-aware loading placeholders
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Shimmer animation ──────────────────────────── */
+@keyframes ui-skeleton-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+/* ── Base bone (single placeholder block) ───────── */
+.ui-skeleton-bone {
+  display: block;
+  background: var(--color-bg-sunken);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.ui-skeleton-bone--animated {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-sunken) 0%,
+    var(--color-bg-elevated) 40%,
+    var(--color-bg-sunken) 80%
+  );
+  background-size: 800px 100%;
+  animation: ui-skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+/* ── Variant: text ──────────────────────────────── */
+.ui-skeleton-bone--text {
+  height: 14px;
+  width: 100%;
+  border-radius: var(--radius-full);
+}
+
+/* ── Variant: heading ───────────────────────────── */
+.ui-skeleton-bone--heading {
+  height: 22px;
+  width: 50%;
+  border-radius: var(--radius-full);
+}
+
+/* ── Variant: circle ────────────────────────────── */
+.ui-skeleton-bone--circle {
+  border-radius: var(--radius-full);
+}
+
+/* ── Variant: rect ──────────────────────────────── */
+.ui-skeleton-bone--rect {
+  width: 100%;
+  height: 100px;
+  border-radius: var(--radius-md);
+}
+
+/* ── Variant: button ────────────────────────────── */
+.ui-skeleton-bone--button {
+  height: 38px;
+  width: 120px;
+  border-radius: var(--radius-md);
+}
+
+/* ── Multi-line text ────────────────────────────── */
+.ui-skeleton-lines {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* ── Compound: Card ─────────────────────────────── */
+.ui-skeleton-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.ui-skeleton-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.ui-skeleton-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-lg);
+}
+
+/* ── Compound: Stat ─────────────────────────────── */
+.ui-skeleton-stat {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* ── Compound: Table ────────────────────────────── */
+.ui-skeleton-table {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.ui-skeleton-table__header {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-lg);
+  border-bottom: 1px solid var(--color-border-light);
+  background: var(--color-bg-elevated);
+}
+
+.ui-skeleton-table__row {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-lg);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.ui-skeleton-table__row:last-child {
+  border-bottom: none;
+}
+
+/* ── Compound: Avatar + text ────────────────────── */
+.ui-skeleton-avatar-text {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.ui-skeleton-avatar-text__lines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ── Compound: Form ─────────────────────────────── */
+.ui-skeleton-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.ui-skeleton-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* ── Compound: List ─────────────────────────────── */
+.ui-skeleton-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.ui-skeleton-list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) 0;
+}
+
+.ui-skeleton-list__item-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

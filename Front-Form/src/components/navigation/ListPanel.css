@@ -1,0 +1,188 @@
+/* ═══════════════════════════════════════════════════════
+   ListPanel — Sub-sidebar / master list navigator
+   ═══════════════════════════════════════════════════════ */
+.ui-list-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+  min-width: 260px;
+  height: 100%;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.ui-list-panel--flush {
+  border: none;
+  border-radius: 0;
+  border-right: 1px solid var(--color-border);
+  background: transparent;
+}
+
+/* ── Header ──────────────────────────────────────────── */
+.ui-list-panel__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+}
+
+.ui-list-panel__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ui-list-panel__title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+}
+
+.ui-list-panel__meta {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.ui-list-panel__action {
+  flex-shrink: 0;
+}
+
+/* ── Toolbar (search / filter) ───────────────────────── */
+.ui-list-panel__toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: 0 var(--space-md) var(--space-sm);
+}
+
+/* ── Scrollable list area ────────────────────────────── */
+.ui-list-panel__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-2xs) var(--space-xs) var(--space-sm);
+}
+
+.ui-list-panel__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ── Item ────────────────────────────────────────────── */
+.ui-list-panel__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.ui-list-panel__item:hover {
+  background: var(--color-bg-hover);
+}
+
+.ui-list-panel__item.is-active {
+  background: var(--color-bg-active);
+  border-color: var(--color-border);
+}
+
+.ui-list-panel__item.is-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 3px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--color-accent);
+}
+
+/* ── Avatar ──────────────────────────────────────────── */
+.ui-list-panel__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-soft);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.ui-list-panel__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Item body ───────────────────────────────────────── */
+.ui-list-panel__item-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ui-list-panel__item-title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-list-panel__item-subtitle {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-list-panel__item-footer {
+  margin-top: var(--space-2xs);
+}
+
+/* ── Trailing (chevron / badge) ──────────────────────── */
+.ui-list-panel__trailing {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+}
+
+/* ── Empty state ─────────────────────────────────────── */
+.ui-list-panel__empty {
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* ── Custom footer slot ──────────────────────────────── */
+.ui-list-panel__footer {
+  padding: var(--space-sm) var(--space-md);
+  border-top: 1px solid var(--color-border);
+}

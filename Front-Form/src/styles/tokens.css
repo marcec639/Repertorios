@@ -1,0 +1,117 @@
+/* ═══════════════════════════════════════════════════════════
+   Design Tokens — 60 / 30 / 10 color rule
+   Change these variables to re-theme the entire UI.
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── 60 % · Base surfaces ─────────────────────────── */
+  --color-bg-page:       #f2f0ed;
+  --color-bg-surface:    #ffffff;
+  --color-bg-elevated:   #f8f7f5;
+  --color-bg-sunken:     #eae8e4;
+
+  /* ── 30 % · Neutral / UI chrome ───────────────────── */
+  --color-text-primary:     #1a1a1a;
+  --color-text-secondary:   #6b6b6b;
+  --color-text-muted:       #9a9a9a;
+  --color-text-placeholder: #b5b5b5;
+  --color-text-inverse:     #ffffff;
+
+  --color-border:        #e0ddd8;
+  --color-border-light:  #ebe8e3;
+  --color-bg-active:     #ece9e3;
+  --color-bg-hover:      #f5f3ef;
+
+  /* ── 10 % · Accent / Brand ────────────────────────── */
+  --color-accent:        #1a1a1a;
+  --color-accent-soft:   #f0eeeb;
+  --color-accent-hover:  #333333;
+
+  /* ── Semantic ─────────────────────────────────────── */
+  --color-success:       #22c55e;
+  --color-success-soft:  #dcfce7;
+  --color-warning:       #f59e0b;
+  --color-warning-soft:  #fef3c7;
+  --color-info:          #3b82f6;
+  --color-info-soft:     #dbeafe;
+  --color-danger:        #ef4444;
+  --color-danger-soft:   #fee2e2;
+
+  /* ── Spacing ──────────────────────────────────────── */
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-2xl: 3rem;
+
+  /* ── Border radius ────────────────────────────────── */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ──────────────────────────────────────── */
+  --shadow-xs:  0 1px 2px rgba(0,0,0,.03);
+  --shadow-sm:  0 1px 3px rgba(0,0,0,.05);
+  --shadow-md:  0 4px 12px rgba(0,0,0,.06);
+  --shadow-lg:  0 8px 24px rgba(0,0,0,.08);
+  --shadow-xl:  0 16px 48px rgba(0,0,0,.10);
+
+  /* ── Typography ───────────────────────────────────── */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, monospace;
+
+  --text-xs:   0.6875rem;
+  --text-sm:   0.8125rem;
+  --text-base: 0.9375rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.375rem;
+  --text-2xl:  1.75rem;
+  --text-3xl:  2.25rem;
+  --text-4xl:  3.5rem;
+  --text-5xl:  5rem;
+
+  --leading-tight:  1.2;
+  --leading-normal: 1.5;
+  --leading-loose:  1.75;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semi:    600;
+  --weight-bold:    700;
+
+  /* ── Layout ───────────────────────────────────────── */
+  --sidebar-width: 340px;
+
+  /* ── Transitions ──────────────────────────────────── */
+  --transition-fast: 100ms ease;
+  --transition-base: 180ms ease;
+  --transition-slow: 300ms ease;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Responsive overrides
+   ═══════════════════════════════════════════════════════════ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 280px;
+    --space-2xl: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 300px;
+    --space-xl:  1.5rem;
+    --space-2xl: 1.5rem;
+    --text-2xl:  1.5rem;
+    --text-3xl:  1.75rem;
+    --text-5xl:  3rem;
+  }
+}

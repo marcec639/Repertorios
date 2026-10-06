@@ -1,0 +1,22 @@
+.ui-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.ui-section__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.ui-section__title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semi);
+  color: var(--color-text-primary);
+}
+
+.ui-section__subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
